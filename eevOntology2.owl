@@ -1,0 +1,1291 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev"
+         xmlns="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#"
+         xmlns:sosa="http://www.w3.org/ns/sosa/">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev">
+  <rdfs:comment>Event Evaluation Volcano</rdfs:comment>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#has_distance">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Event_Distance_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>has distance</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_epicenter">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Epincenter_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>has epicenter</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_location">
+  <rdfs:domain rdf:resource="#Seismograph_Station"/>
+  <rdfs:range rdf:resource="#City_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>has location</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_magnitudo">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Magnitudo_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>has magnitudo</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_kind_of">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Kind_Of_Event"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>is kind of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observe_event">
+  <rdfs:domain rdf:resource="#Seismograph_Station"/>
+  <rdfs:range rdf:resource="#Event"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#observed_by_station"/>
+  <rdfs:label>observe event</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observed_by_station">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Seismograph_Station"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>observed by station</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#observes_property">
+  <rdfs:domain rdf:resource="#Seismograph_Station"/>
+  <rdfs:range rdf:resource="#Epincenter_Property"/>
+  <rdfs:range rdf:resource="#Event_Distance_Property"/>
+  <rdfs:range rdf:resource="#Magnitudo_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label>observes property</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hosts">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+  <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+  <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+  <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+  <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#coordinate">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dataIRI">
+  <rdfs:domain rdf:resource="#Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dataLabel">
+  <rdfs:domain rdf:resource="#Data"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDistanceValue">
+  <rdfs:domain rdf:resource="#Event_Distance_Property"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEpicenterValue">
+  <rdfs:domain rdf:resource="#Epincenter_Property"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMagnitudoValue">
+  <rdfs:domain rdf:resource="#Magnitudo_Property"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPopulation">
+  <rdfs:domain rdf:resource="#City_Property"/>
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#neighbourhood">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa/resultTime">
+  <rdfs:domain rdf:resource="#Event"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event_Distance_Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Epincenter_Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Seismograph_Station">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#City_Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Magnitudo_Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Kind_Of_Event"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Result"/>
+
+<owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+
+<owl:Class rdf:about="#Data">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
+
+<owl:Class rdf:about="#Earthquake">
+  <rdfs:subClassOf rdf:resource="#Kind_Of_Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#QuarryBlast">
+  <rdfs:subClassOf rdf:resource="#Kind_Of_Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Thunder">
+  <rdfs:subClassOf rdf:resource="#Kind_Of_Event"/>
+</owl:Class>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Bari">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1261954</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Bologna">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1005831</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Brindisi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88302</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Cagliari">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">431657</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Catania">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1116168</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Enna">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28084</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Firenze">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1012388</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Genova">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">862175</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Messina">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">647477</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Milano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3206465</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Napoli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3128700</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Palermo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1276525</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/ReggioCalabria">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">559215</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Roma">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4333689</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Torino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2283749</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="http://dbpedia.org/resource/Venezia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">264579</hasPopulation>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">846962</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Acireale">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52591</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Acquapendente">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5619</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#AcquiTerme">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20488</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Afragola">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63820</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Agrigento">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59791</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Albenga">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24378</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Alessandria">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93922</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Altamura">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69738</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ancona">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101300</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Andria">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100440</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Anzio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54115</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Aosta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34800</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Aquileia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3503</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Arezzo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99232</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Asti">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75793</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Avella">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7839</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Aversa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53047</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Avezzano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42487</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Avola">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31695</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Balvano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1938</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Bari">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">320475</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Barletta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94320</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#BassanoDelGrappa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42947</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Benevento">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60169</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Bergamo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119381</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Bitonto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56302</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Bologna">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">387554</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Bolzano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105713</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Brescia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">196480</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#BustoArsizio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81883</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Caiazzo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5787</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Caivano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37874</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Calvera">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">522</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Campobasso">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49434</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cantù">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39036</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Capua">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18802</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Carrara">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63409</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Casorezzo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4628</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CastanoPrimo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10781</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CastelDiSangro">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6461</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CastelSanPietroTerme">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20821</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Castellaneta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17194</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CastiglionFiorentino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13386</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Catania">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">315601</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Catanzaro">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91028</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cefalù">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13777</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cesena">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97131</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Chieti">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51340</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ciminna">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4016</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CittàDiCastello">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40479</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Colico">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Como">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">84394</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cosenza">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71000</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cremona">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71657</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#CrespanoDelGrappa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4767</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Crotone">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62187</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cuneo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56009</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Eraclea">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12695</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Faenza">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58204</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ferrara">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">133485</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Firenze">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">382808</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Foggia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">153143</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Fondi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38437</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Formia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36331</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Fossacesia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6184</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Gaeta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20762</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Gallarate">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52857</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Gibellina">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4298</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#GiuglianoInCampania">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123174</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Grosseto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82131</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Imperia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42243</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ispica">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Itri">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10679</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#LaSpezia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93983</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#LameziaTerme">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70452</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lecce">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94766</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lecco">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48131</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Licata">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38043</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Livorno">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">159431</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lodi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43325</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lucca">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87467</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lucera">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34243</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Macerata">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42534</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Manduria">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31721</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Mantova">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48353</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Matera">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60023</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Mendicino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9259</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Miggiano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3684</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Milano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1359905</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Minturno">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19825</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Mirandola">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22068</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Modena">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184731</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Modica">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54581</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Molfetta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60433</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Moncalvo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3319</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#MontaltoUffugo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17258</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Montegaldella">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1826</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Monza">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120398</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Muggiò">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23362</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#MuroLucano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5812</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Novara">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104388</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#NoviLigure">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28581</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Nuoro">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36347</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Olbia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58066</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Oppeano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9005</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Oristano">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32156</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#OrsaraDiPuglia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3268</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Orvieto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21043</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ostuni">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32182</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Padova">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">214125</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Palermo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">676118</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Palestrina">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21567</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Parma">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">192836</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Perugia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168066</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pescara">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123103</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Piacenza">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100413</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pisa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90834</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pistoia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90462</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pompei">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25358</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pontremoli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7942</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Pozzuoli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83398</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Prato">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191104</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ragusa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69875</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ravenna">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">158784</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#ReggioCalabria">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200330</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Rieti">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47745</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Rimini">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">146606</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Robbio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6161</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ronciglione">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8908</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Rovereto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37549</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Salerno">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">133199</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanBenedettoDelTronto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48700</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanBiagioDiCallalta">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13093</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanDonàDiPiave">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41826</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanGiovanniRotondo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27184</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanSevero">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53957</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Sanremo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56864</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Sassari">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127265</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Scicli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26215</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Siena">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52774</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Siracusa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123408</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Soleto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5523</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Sora">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28500</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Spoleto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38283</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Sulmona">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24854</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Taranto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200154</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Tarquinia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16630</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#TeleseTerme">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5740</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Teramo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54884</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Terni">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111955</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Thiene">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23927</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Torino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">892649</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#TorreAnnunziata">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42788</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#TorreDelGreco">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87575</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Tradate">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16259</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Trapani">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69293</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Trento">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">117317</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Treviso">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82535</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Trieste">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">204849</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Udine">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100514</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Urbino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15566</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Varese">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80596</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Ventimiglia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25763</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Vercelli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47220</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Verona">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">259069</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Viareggio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64564</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#ViboValentia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33819</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Vicenza">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113655</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Vignola">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25251</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Vimercate">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25601</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#VittorioVeneto">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28232</hasPopulation>
+</City_Property>
+
+<Seismograph_Station rdf:about="#stazione1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <owl:topDataProperty>BGK</owl:topDataProperty>
+</Seismograph_Station>
+
+<City_Property rdf:about="#Cavade'Tirreni">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53997</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cento(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35837</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Cittadella(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20025</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Fiorenzuolad'Arda">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15379</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#L'Aquila">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70967</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Lavagna(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12510</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Marino(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42575</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Mazzarino(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12231</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Meda(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23221</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Noci(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19477</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Noto(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23913</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Palazzolosull'Oglio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20066</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Potenza(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67348</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#QuartuSant'Elena">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69255</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Reggionell'Emilia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">173013</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Rodano(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4300</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Romanod'Ezzelino">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14621</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#SanMarcod'Alunzio">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2155</hasPopulation>
+</City_Property>
+
+<City_Property rdf:about="#Susa(Italia)">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6686</hasPopulation>
+</City_Property>
+
+<Event rdf:about="#Evento campi flegreii">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_distance rdf:resource="#segnale1EventDistance"/>
+  <has_epicenter rdf:resource="#segnale1EventEpicenter"/>
+  <has_magnitudo rdf:resource="#segnale1EventMagnitudo"/>
+  <is_kind_of rdf:resource="#EartquakeInstance"/>
+  <sosa:madeBySensor rdf:resource="http://www.w3.org/ns/sosa/Sismografo Samsung"/>
+  <sosa:resultTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-12-19</sosa:resultTime>
+</Event>
+
+<Data rdf:about="#segnale1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <sosa:isResultOf rdf:resource="#Evento campi flegreii"/>
+  <dataIRI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/content/drive/My Drive/Machine Learning/BigDataProject/signal1.dat</dataIRI>
+  <dataLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">segnale1</dataLabel>
+</Data>
+
+<Magnitudo_Property rdf:about="#segnale1EventMagnitudo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasMagnitudoValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</hasMagnitudoValue>
+</Magnitudo_Property>
+
+<Event_Distance_Property rdf:about="#segnale1EventDistance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDistanceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasDistanceValue>
+</Event_Distance_Property>
+
+<Epincenter_Property rdf:about="#segnale1EventEpicenter">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasEpicenterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">40°46′N 14°48′E</hasEpicenterValue>
+</Epincenter_Property>
+
+<Seismograph_Station rdf:about="#Stazione di napoli">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_location rdf:resource="http://dbpedia.org/resource/Napoli"/>
+  <observe_event rdf:resource="#Evento campi flegreii"/>
+  <sosa:hosts rdf:resource="http://www.w3.org/ns/sosa/Sismografo Samsung"/>
+</Seismograph_Station>
+
+<sosa:Sensor rdf:about="http://www.w3.org/ns/sosa/Sismografo Samsung">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</sosa:Sensor>
+
+<Earthquake rdf:about="#Eartquake">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Earthquake>
+
+<Earthquake rdf:about="#EartquakeInstance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Earthquake>
+
+<Thunder rdf:about="#ThunderInstance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Thunder>
+
+<QuarryBlast rdf:about="#QuarryBlastInstance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</QuarryBlast>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Earthquake"/>
+    <rdf:Description rdf:about="#QuarryBlast"/>
+    <rdf:Description rdf:about="#Thunder"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

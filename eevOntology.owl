@@ -1,0 +1,2267 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev"
+     xml:base="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev"
+     xmlns:eev="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev">
+        <rdfs:comment>Event Evaluation Volcano</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_distance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_distance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event_Distance_Property"/>
+        <rdfs:label>has distance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_epicenter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_epicenter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Epincenter_Property"/>
+        <rdfs:label>has epicenter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_location -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_location">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <rdfs:label>has location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_magnitudo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#has_magnitudo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Magnitudo_Property"/>
+        <rdfs:label>has magnitudo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#is_kind_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#is_kind_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event"/>
+        <rdfs:label>is kind of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observe_event -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observe_event">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observed_by_station"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:label>observe event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observed_by_station -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observed_by_station">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station"/>
+        <rdfs:label>observed by station</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observes_property -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#observes_property">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Epincenter_Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event_Distance_Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Magnitudo_Property"/>
+        <rdfs:label>observes property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hosts">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isResultOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeBySensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#coordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#coordinate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#dataIRI -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#dataIRI">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#dataLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#dataLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Data"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasDistanceValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasDistanceValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event_Distance_Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasEpicenterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasEpicenterValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Epincenter_Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasMagnitudoValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasMagnitudoValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Magnitudo_Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasPopulation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#hasPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#neighbourhood -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#neighbourhood">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa/resultTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Data -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Data">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Earthquake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Earthquake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Epincenter_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Epincenter_Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event_Distance_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Event_Distance_Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event"/>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Magnitudo_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Magnitudo_Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#QuarryBlast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#QuarryBlast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Thunder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Thunder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Kind_Of_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Property -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/resource/Bari -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1261954</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Bologna -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Bologna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1005831</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Brindisi -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Brindisi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88302</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Cagliari -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Cagliari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">431657</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Catania -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Catania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1116168</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Enna -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Enna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28084</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Firenze -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Firenze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1012388</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Genova -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Genova">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">862175</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Messina -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Messina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">647477</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Milano -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Milano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3206465</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Napoli -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Napoli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3128700</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Palermo -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Palermo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1276525</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/ReggioCalabria -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/ReggioCalabria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">559215</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Roma -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Roma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4333689</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Torino -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Torino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2283749</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/resource/Venezia -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/resource/Venezia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">264579</eev:hasPopulation>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">846962</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Acireale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Acireale">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52591</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Acquapendente -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Acquapendente">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5619</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#AcquiTerme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#AcquiTerme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20488</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Afragola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Afragola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63820</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Agrigento -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Agrigento">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59791</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Albenga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Albenga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24378</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Alessandria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Alessandria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93922</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Altamura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Altamura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69738</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ancona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ancona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101300</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Andria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Andria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100440</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Anzio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Anzio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54115</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aosta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aosta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34800</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aquileia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aquileia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3503</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Arezzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Arezzo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99232</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Asti -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Asti">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75793</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7839</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aversa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Aversa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53047</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avezzano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avezzano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42487</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Avola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31695</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Balvano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Balvano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1938</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">320475</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Barletta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Barletta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94320</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#BassanoDelGrappa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#BassanoDelGrappa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42947</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Benevento -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Benevento">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60169</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bergamo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bergamo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119381</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bitonto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bitonto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56302</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bologna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bologna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">387554</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bolzano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Bolzano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105713</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Brescia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Brescia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">196480</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#BustoArsizio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#BustoArsizio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81883</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Caiazzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Caiazzo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5787</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Caivano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Caivano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37874</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Calvera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Calvera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">522</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Campobasso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Campobasso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49434</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cantù -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cantù">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39036</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Capua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Capua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18802</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Carrara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Carrara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63409</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Casorezzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Casorezzo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4628</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastanoPrimo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastanoPrimo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10781</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastelDiSangro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastelDiSangro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6461</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastelSanPietroTerme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastelSanPietroTerme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20821</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Castellaneta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Castellaneta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17194</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastiglionFiorentino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CastiglionFiorentino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13386</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Catania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Catania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">315601</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Catanzaro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Catanzaro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91028</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cefalù -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cefalù">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13777</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cesena -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cesena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97131</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Chieti -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Chieti">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51340</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ciminna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ciminna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4016</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CittàDiCastello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CittàDiCastello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40479</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Colico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Colico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Como -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Como">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">84394</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cosenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cosenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71000</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cremona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cremona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71657</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CrespanoDelGrappa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#CrespanoDelGrappa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4767</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Crotone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Crotone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62187</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cuneo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cuneo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56009</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Eraclea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Eraclea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12695</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Faenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Faenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58204</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ferrara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ferrara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">133485</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Firenze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Firenze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">382808</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Foggia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Foggia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">153143</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fondi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fondi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38437</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Formia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Formia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36331</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fossacesia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fossacesia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6184</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gaeta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gaeta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20762</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gallarate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gallarate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52857</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gibellina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Gibellina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4298</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#GiuglianoInCampania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#GiuglianoInCampania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123174</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Grosseto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Grosseto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82131</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Imperia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Imperia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42243</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ispica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ispica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Itri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Itri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10679</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#LaSpezia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#LaSpezia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93983</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#LameziaTerme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#LameziaTerme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70452</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lecce -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lecce">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94766</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lecco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lecco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48131</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Licata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Licata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38043</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Livorno -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Livorno">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">159431</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lodi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lodi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43325</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lucca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lucca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87467</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lucera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lucera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34243</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Macerata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Macerata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42534</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Manduria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Manduria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31721</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mantova -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mantova">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48353</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Matera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Matera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60023</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mendicino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mendicino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9259</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Miggiano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Miggiano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3684</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Milano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Milano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1359905</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Minturno -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Minturno">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19825</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mirandola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mirandola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22068</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Modena -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Modena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184731</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Modica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Modica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54581</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Molfetta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Molfetta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60433</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Moncalvo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Moncalvo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3319</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#MontaltoUffugo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#MontaltoUffugo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17258</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Montegaldella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Montegaldella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1826</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Monza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Monza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120398</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Muggiò -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Muggiò">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23362</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#MuroLucano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#MuroLucano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5812</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Novara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Novara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104388</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#NoviLigure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#NoviLigure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28581</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Nuoro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Nuoro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36347</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Olbia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Olbia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58066</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Oppeano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Oppeano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9005</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Oristano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Oristano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32156</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#OrsaraDiPuglia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#OrsaraDiPuglia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3268</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Orvieto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Orvieto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21043</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ostuni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ostuni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32182</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Padova -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Padova">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">214125</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palermo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palermo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">676118</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palestrina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palestrina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21567</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Parma -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Parma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">192836</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Perugia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Perugia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168066</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pescara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pescara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123103</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Piacenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Piacenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100413</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pisa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pisa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90834</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pistoia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pistoia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90462</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pompei -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pompei">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25358</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pontremoli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pontremoli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7942</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pozzuoli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Pozzuoli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83398</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Prato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Prato">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191104</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ragusa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ragusa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69875</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ravenna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ravenna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">158784</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#ReggioCalabria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#ReggioCalabria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200330</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rieti -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rieti">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47745</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rimini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rimini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">146606</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Robbio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Robbio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6161</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ronciglione -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ronciglione">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8908</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rovereto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rovereto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37549</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Salerno -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Salerno">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">133199</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanBenedettoDelTronto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanBenedettoDelTronto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48700</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanBiagioDiCallalta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanBiagioDiCallalta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13093</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanDonàDiPiave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanDonàDiPiave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41826</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanGiovanniRotondo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanGiovanniRotondo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27184</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanSevero -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanSevero">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53957</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sanremo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sanremo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56864</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sassari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sassari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127265</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Scicli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Scicli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26215</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Siena -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Siena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52774</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Siracusa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Siracusa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123408</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Soleto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Soleto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5523</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sora -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sora">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28500</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Spoleto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Spoleto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38283</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sulmona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Sulmona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24854</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Taranto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Taranto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200154</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Tarquinia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Tarquinia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16630</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TeleseTerme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TeleseTerme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5740</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Teramo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Teramo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54884</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Terni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Terni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111955</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Thiene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Thiene">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23927</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Torino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Torino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">892649</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TorreAnnunziata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TorreAnnunziata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42788</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TorreDelGreco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#TorreDelGreco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87575</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Tradate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Tradate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16259</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trapani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trapani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69293</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trento -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trento">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">117317</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Treviso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Treviso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82535</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trieste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Trieste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">204849</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Udine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Udine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100514</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Urbino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Urbino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15566</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Varese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Varese">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80596</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ventimiglia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Ventimiglia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25763</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vercelli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vercelli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47220</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Verona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Verona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">259069</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Viareggio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Viareggio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64564</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#ViboValentia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#ViboValentia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33819</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vicenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vicenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113655</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vignola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vignola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25251</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vimercate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Vimercate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25601</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#VittorioVeneto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#VittorioVeneto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28232</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#stazione1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#stazione1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Seismograph_Station"/>
+        <owl:topDataProperty>BGK</owl:topDataProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cavade&apos;Tirreni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cavade&apos;Tirreni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53997</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cento(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cento(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35837</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cittadella(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Cittadella(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20025</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fiorenzuolad&apos;Arda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Fiorenzuolad&apos;Arda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15379</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#L&apos;Aquila -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#L&apos;Aquila">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70967</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lavagna(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Lavagna(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12510</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Marino(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Marino(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42575</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mazzarino(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Mazzarino(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12231</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Meda(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Meda(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23221</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Noci(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Noci(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19477</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Noto(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Noto(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23913</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palazzolosull&apos;Oglio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Palazzolosull&apos;Oglio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20066</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Potenza(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Potenza(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67348</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#QuartuSant&apos;Elena -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#QuartuSant&apos;Elena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69255</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Reggionell&apos;Emilia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Reggionell&apos;Emilia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">173013</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rodano(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Rodano(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4300</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Romanod&apos;Ezzelino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Romanod&apos;Ezzelino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14621</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanMarcod&apos;Alunzio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#SanMarcod&apos;Alunzio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2155</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Susa(Italia) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Susa(Italia)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#City_Property"/>
+        <eev:hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6686</eev:hasPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Earthquake"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#QuarryBlast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/BigDataProject/ontologies/2019/10/eev#Thunder"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
