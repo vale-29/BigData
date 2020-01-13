@@ -1,4 +1,4 @@
-# big_data
+# BigData
 
 ## Progettazione ontologia per eventi sismici con approccio machine learning
 <img src="documentazione/img.jpg">
